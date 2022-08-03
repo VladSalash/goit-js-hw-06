@@ -21,8 +21,11 @@
 // функция которая создает элементы принимает параметр - число(Number):
 // функция 
 // 1)задание похоже частично на 6й таск(или все таки на 8й...),только вместо проверки на правильное количество элементов ---просто ввод элементов,затем клик по кнопке создать.
-// 2)создание функции createBoxes(amount) похоже на 2й и 3й таск только определиться,как буду делать,но там однозначно forEach() по идее.
-
+// 2)создание функции createBoxes(amount) похоже на 2й и 3й таск только определитьс я,как буду делать,но там однозначно forEach() по идее.
+// У цю змінну записується об'єкт події (event). 
+// Вам при кліку на кнопку створення слід зчитувати введену в інпут цифру.
+// І да і створити цикл фор, який має пройти кількість ітерацій, що відповідає введеній цифрі.
+// На кожній ітерації  - створювати дів
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
@@ -30,26 +33,38 @@ function getRandomHexColor() {
 
 const refs = {
   divControls: document.querySelector('#controls'), 
-  input: document.querySelector('#input'),
+  input: document.querySelector('#controls > input'),
   buttonCreate: document.querySelector('button[data-create]'),
   buttonDestroy: document.querySelector('button[data-destroy]'),
   divBoxes: document.querySelector('#boxes'),
 }
-refs.buttonCreate.addEventListener('click',createBoxes)
-refs.buttonDestroy.addEventListener('click',destroyBoxes)
 
-function createBoxes(amount){
+
+refs.buttonCreate.addEventListener('click', onCreateRead)
+
+function onCreateRead() {
+createBoxes(refs.input.value);
+}
+
+function createBoxes(amount) {
+  let str = ''; 
+  for(let i = 0; i < amount; i++){
+    str += createBox(i)
+  }
+  refs.divBoxes.innerHTML = str;
+}
   
-  amount.forEach() {
-    const createCont = document.createElement('div');
-    createCont.classList.add('renderBox');
-    // createCont.style.fontSize = `${refs.input.value}`
-    refs.divBoxes.append(createCont);
-    createCont.textContent = element;
+function createBox(evbox) {
+  return `<div 
+          style="background-color: ${getRandomHexColor()};
+          height:${30 + 10 * evbox}px;width:${30 + 10 * evbox}px;" >
+          </div>`;
 }
+ 
 
-}
 
-function destroyBoxes(){ 
-  refs.buttonDestroy.reset();
+refs.buttonDestroy.addEventListener('click',destroyBoxes)
+function destroyBoxes() { 
+  refs.divBoxes.innerHTML = '';
+  refs.input.value = '';
 }

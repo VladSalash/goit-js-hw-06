@@ -1,5 +1,5 @@
 
-// так решил знакомый =>
+
 
 const quantityRefItem = document.querySelectorAll('.item');
 console.log(`Number of categories: ${quantityRefItem.length}`);
@@ -9,7 +9,7 @@ quantityRefItem.forEach(categories => {
     console.log(`Elements: ${categories.children[1].children.length}`);
 })
 
-// так решил друг =>
+
 
 // const ulItemRef = document.querySelectorAll(".item");
 // console.log("Number of categories:", ulItemRef.length);
@@ -21,7 +21,7 @@ quantityRefItem.forEach(categories => {
 
 
 
-// так решал я(((( =>
+
 
 // const firstRefChildItem = quantityRefItem.firstElementChild
 // const categoryRefAnimal = document.querySelector('h2');

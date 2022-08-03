@@ -12,9 +12,9 @@ function onFormSubmit(event) {
   }
     // если поля заполнены ,заполняем обьекту юзер эмейл пароль
     const user = {
-        email: email.value,
-        password: password.value,
-    }
+          email: email.value,
+          password: password.value,
+          }
     console.log(`Login: ${user.email}, Password: ${user.password}`);
     event.currentTarget.reset();
 }
