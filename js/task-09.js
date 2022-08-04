@@ -7,7 +7,7 @@ const spanRef = document.querySelector('.color');
 const buttonRef = document.querySelector('.change-color');
 console.log(bodyRef)
 
-bodyRef.addEventListener('click', onChangeColorButton);
+buttonRef.addEventListener('click', onChangeColorButton);
 
 function onChangeColorButton() {
 bodyRef.style.backgroundColor = getRandomHexColor();

@@ -15,10 +15,10 @@ const invalidColor = document.querySelector('#validation-input[invalid]');
 inputRef.addEventListener('blur', onInputBlur)
 
 function onInputBlur(event) {
+    inputRef.classList.add('invalid')
+    inputRef.classList.remove('valid')
     if(event.currentTarget.value.length === Number(event.currentTarget.dataset.length)) {
         inputRef.classList.add('valid')
-       
-    }
-    inputRef.classList.remove('invalid')
-    
+        inputRef.classList.remove('invalid')
+       }
 }

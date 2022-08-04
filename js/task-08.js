@@ -11,10 +11,10 @@ function onFormSubmit(event) {
     return alert("Please fill in all the fields!");
   }
     // если поля заполнены ,заполняем обьекту юзер эмейл пароль
-    const user = {
-          email: email.value,
-          password: password.value,
-          }
-    console.log(`Login: ${user.email}, Password: ${user.password}`);
+    // const user = {
+    //       email: email.value,
+    //       password: password.value,
+    //       }
+    console.log(`Email: ${email.value}, Password: ${password.value}`);
     event.currentTarget.reset();
 }
